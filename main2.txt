@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main() {
+    char opt;
+    double one, two, result;
+    
+    printf("\n\t\t\t\t\tCALCULATOR");
+    printf("\n\n\n\t\tEnter one operator (+, -, *, /): ");
+    scanf("%c", &opt);
+    printf("\n\n\t\tEnter first numbers: ");
+    scanf("%lf", &one);
+    printf("\n\t\tEnter second numbers: ");
+    scanf("%lf", &two);
+    
+    switch(opt) {
+        case '+':
+            result = one + two;
+            break;
+        case '-':
+            result = one - two;
+            break;
+        case '*':
+            result = one * two;
+            break;
+        case '/':
+            if(two == 0) {
+                printf("\n\t\tAnything Divided By Zero Is Zero");
+                return 1;
+            }
+            result = one / two;
+            break;
+        default:
+            printf("\n\n\t\t\t********INVALID OPERATOR CHOOSEN********");
+            return 1;
+    }
+    printf("\n\t\tResult: %.2lf\n", result);
+    printf("\n***************  THANK YOU  ***************");
+    return 0;
+}
